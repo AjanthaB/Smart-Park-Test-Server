@@ -1,8 +1,8 @@
 'user strict'
 
 var mqtt = require('mqtt');
-// const client = mqtt.connect('tcp://52.24.61.14:1883');
-var client = mqtt.connect('tcp://192.168.8.100:1883');
+const client = mqtt.connect('tcp://52.24.61.14:1883');
+// var client = mqtt.connect('tcp://192.168.8.100:1883');
 var Service = require('../services/nodeService');
 var nodeService = new Service();
 

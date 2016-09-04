@@ -7,7 +7,7 @@ var options = {
     port:1884
 };
 
-client = new Paho.MQTT.Client(options.host, Number(options.port), "smartPartServer");
+client = new Paho.MQTT.Client(options.host, Number(options.port), "smartParkServer");
 
 // set callback handlers
 client.onConnectionLost = onConnectionLost;

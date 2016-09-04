@@ -15,14 +15,22 @@ var message = {
     isAvailable:false
 };
 
+var dummyData = [{"isActiveCount":2,"count":3,"owner":"ala"},{"isActiveCount":2,"count":3,"owner":"e-fac"}];
+
+function publishDummyData() {
+    publish("toMobile",jsonToString(dummyData));
+}
+
 var contained = false;
 
 client.on('connect', function() {
+    // clearInterval()
     console.log("connection on");
     subscribe('toServer-new');
     subscribe('toServer');
     subscribe('newClient');
-    publish('toMobile',jsonToString([{nodeId:100, isAvailable:false,owner:"e-fac"}]));
+    // publish('toMobile',jsonToString([{nodeId:100, isAvailable:false,owner:"e-fac"}]));
+    setInterval(publishDummyData, 3000);
 });
 
 function subscribe(topic){
